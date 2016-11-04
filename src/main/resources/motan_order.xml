@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:motan="http://api.weibo.com/schema/motan"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+   http://api.weibo.com/schema/motan http://api.weibo.com/schema/motan.xsd">
+
+    <!-- service implemention bean -->
+    <bean id="orderServiceImpl" class="com.wallace.motan.OrderServiceImpl" />
+    <!-- exporting service by motan -->
+    <motan:service interface="com.wallace.motan.OrderService" ref="orderServiceImpl" registry="my_consul" export="8004" group="v1" />
+
+    <motan:registry regProtocol="consul" name="my_consul" address="10.58.9.201:8500"/>
+</beans>
