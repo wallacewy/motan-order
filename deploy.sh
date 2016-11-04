@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-docker run -d -p 8001:8001 motan-order
+docker run -d -p 8004:8004 motan-order
