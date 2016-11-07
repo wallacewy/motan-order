@@ -8,7 +8,7 @@
     <!-- service implemention bean -->
     <bean id="orderServiceImpl" class="com.wallace.motan.OrderServiceImpl" />
     <!-- exporting service by motan -->
-    <motan:service interface="com.wallace.motan.OrderService" ref="orderServiceImpl" registry="my_consul" export="8004" group="v1" />
+    <motan:service interface="com.wallace.motan.OrderService" ref="orderServiceImpl" registry="my_consul" export="8004" group="v2" />
 
     <motan:registry regProtocol="consul" name="my_consul" address="10.58.9.201:8500"/>
 </beans>
